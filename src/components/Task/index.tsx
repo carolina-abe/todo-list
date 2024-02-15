@@ -1,15 +1,15 @@
 import React from "react"
+import { TaskProps } from "../../types/tasks"
 
-export type TaskProps = {
-    id: number,
-    name: string
+type Props = Partial<TaskProps> & {
+  onDelete: () => void
 }
 
-export const Task: React.FC<TaskProps> = ({ name }) => {
+export const Task: React.FC<Props> = ({ task, onDelete }) => {
   return (
     <li>
-      <span>{name}</span>
-      <button>Remove</button>
+      <span>{task}</span>
+      <button onClick={() => onDelete}>Remove</button>
     </li>
   )
 }

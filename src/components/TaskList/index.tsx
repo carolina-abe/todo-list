@@ -1,11 +1,9 @@
 import React from "react"
 import { Task } from "../Task"
+import { TaskProps } from "../../types/tasks"
 
 type TaskListProps = {
-  tasks: {
-    id: number
-    name: string 
-  } []
+  tasks: TaskProps[]
 }
 
 export const TaskList: React.FC<TaskListProps> = ({ tasks }) => {
