@@ -23,8 +23,9 @@ export const TaskInput: React.FC<TaskInputProps> = ({ onAddTask }) => {
         value={input} 
         onChange={e => setInput(e.target.value)} 
         placeholder="Add a new task"
+        className="rounded border mx-2 p-[0.25rem] border-slate-500"
       />
-      <button type="submit">Add</button>
+      <button type="submit" className="rounded bg-esmerald-500 hover:bg-esmerald-400 px-3 py-1 text-white font-bold text-sm">+</button>
     </form>
   )
 }

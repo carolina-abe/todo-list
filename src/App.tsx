@@ -42,7 +42,7 @@ function App() {
 
   return (
     <>
-      <h1 className='underline'>TodoList</h1>
+      <h1 className='text-2xl mx-2 my-4'>TodoList</h1>
       <TaskInput onAddTask={addTask}/>
       {tasks.length === 0 && (<p>There is no tasks</p>)}
       {tasks.map((task) => (
