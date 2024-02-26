@@ -41,20 +41,21 @@ function App() {
   }, [tasks])
 
   return (
-    <>
-      <h1 className='text-2xl mx-2 my-4'>TodoList</h1>
+    <main className='flex flex-col items-center justify-center gap-2'>
+      <h1 className='text-2xl mx-2 my-4 font-bold'>TodoList</h1>
       <TaskInput onAddTask={addTask}/>
-      {tasks.length === 0 && (<p>There is no tasks</p>)}
+      {!tasks.length && (<p>There is no tasks</p>)}
       {tasks.map((task) => (
         <Task 
           id={task.id}
           key={task.id} 
-          task={task.task} 
+          task={task.task}
+          isCompleted={task.isCompleted} 
           onDelete={() => removeTask(task.id)} 
           onToggleComplete={() => toggleTaskDone(task.id)}
           />
       ))}
-    </>
+    </main>
   )
 }
 

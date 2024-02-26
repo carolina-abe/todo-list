@@ -1,3 +1,4 @@
+import { Plus } from "@phosphor-icons/react"
 import React, { FormEvent, useState } from "react"
 
 type TaskInputProps = {
@@ -23,9 +24,13 @@ export const TaskInput: React.FC<TaskInputProps> = ({ onAddTask }) => {
         value={input} 
         onChange={e => setInput(e.target.value)} 
         placeholder="Add a new task"
-        className="rounded border mx-2 p-[0.25rem] border-slate-500"
+        className="rounded border mx-2 my-4 p-[0.25rem] border-slate-500"
       />
-      <button type="submit" className="rounded bg-esmerald-500 hover:bg-esmerald-400 px-3 py-1 text-white font-bold text-sm">+</button>
+      <button 
+        type="submit" className="rounded bg-slate-700 hover:bg-slate-500 p-2 text-white font-bold text-sm"
+      >
+        <Plus size={14} weight="bold"/>
+      </button>
     </form>
   )
 }
